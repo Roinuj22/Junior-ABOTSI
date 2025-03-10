@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $dbname = "ferme_ecoresponsable";
-$username = "root"; // Change si nécessaire
-$password = ""; // Laisse vide si aucun mot de passe
+$username = "root"; 
+$password = ""; 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
