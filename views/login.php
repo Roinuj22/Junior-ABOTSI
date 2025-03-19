@@ -1,41 +1,35 @@
-<?php
-session_start();
-include("../config/db.php"); // Inclure la connexion DB
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    $query = $pdo->prepare("SELECT * FROM Utilisateur WHERE email = :email");
-    $query->execute(["email" => $email]);
-    $user = $query->fetch(PDO::FETCH_ASSOC);
-
-    if ($user && $password == $user["telephone"]) { // ⚠️ Remplace 'telephone' par un champ "motDePasse" dans la BD plus tard
-        $_SESSION["idUtilisateur"] = $user["idUtilisateur"];
-        $_SESSION["typeUtilisateur"] = $user["typeUtilisateur"];
-
-        header("Location: ../index.php"); // Redirection après connexion
-        exit();
-    } else {
-        $error = "Email ou mot de passe incorrect";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Ferme Écoresponsable</title>
+    <link rel="stylesheet" href="../asserts/style.css">
 </head>
 <body>
-    <h2>Connexion</h2>
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form method="POST">
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Mot de passe" required><br>
-        <button type="submit">Se connecter</button>
-    </form>
+
+    <div class="header">
+        <h1>Bienvenue à la Ferme Écoresponsable</h1>
+    </div>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Connexion</h2>
+            <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
+            <form action="../controllers/loginController.php" method="post">
+                <div class="input-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+    </div>
+    <script src="../asserts/script.js"></script>
+
 </body>
 </html>

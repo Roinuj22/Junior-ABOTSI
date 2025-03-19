@@ -1,0 +1,91 @@
+body {
+    background-color: #f0f8ff; /* Bleu clair */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* En-tête : centré en haut */
+.header {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #0056b3; /* Bleu foncé */
+    margin-bottom: 10px;
+}
+
+/* Conteneur principal */
+.dashboard-container {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 255, 0.2);
+    border: 2px solid #0056b3;
+}
+
+/* Message de bienvenue */
+.dashboard-container p {
+    font-size: 18px;
+    color: #0056b3;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Menu de navigation */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+nav a {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    text-decoration: none;
+    background: #0056b3;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    background: #003d82;
+    transform: scale(1.05);
+}
+
+/* Bouton de déconnexion */
+.logout-btn {
+    display: block;
+    margin-top: 20px;
+    padding: 12px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 250px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.logout-btn:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
