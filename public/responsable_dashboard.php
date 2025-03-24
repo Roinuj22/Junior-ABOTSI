@@ -21,10 +21,10 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "Responsable") {
     <div class="dashboard-container">
         <p>Bienvenue, <?php echo htmlspecialchars($_SESSION["email"]); ?> !</p>
         <nav>
-            <a href="stocks.php">Gestion des stocks</a>
-            <a href="ventes.php">Ventes</a>
-            <a href="woofers.php">Gestion des woofers</a>
-            <a href="ateliers.php">Gestion des ateliers</a>
+            <a href="/CSI_APPLICATION/views/stocks.php">Gestion des stocks</a>
+            <a href="/CSI_APPLICATION/views/vente.php">Ventes</a>
+            <a href="/CSI_APPLICATION/views/woofers.php">Gestion des woofers</a>
+            <a href="/CSI_APPLICATION/views/atelier.php">Gestion des ateliers</a>
         </nav>
         <a href="/CSI_APPLICATION/public/logout.php" class="logout-btn">Déconnexion</a>
 

@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($user) {
             // Teste si le mot de passe correspond
             if ($user && password_verify($password, $user['password'])) {
+                $_SESSION["user_id"] = $user["idUtilisateur"];
                 $_SESSION["email"] = $user["email"];
                 $_SESSION["role"] = $user["typeUtilisateur"];
 

@@ -21,9 +21,9 @@ if (!isset($_SESSION["role"]) || $_SESSION["role"] !== "Woofer") {
     <div class="dashboard-container">
         <p>Bienvenue, <?php echo htmlspecialchars($_SESSION["email"]); ?> !</p>
         <nav>
-            <a href="ventes.php">Effectuer une vente</a>
-            <a href="stocks.php">Entrées/Sorties de produits</a>
-            <a href="ateliers.php">Inscription aux ateliers</a>
+            <a href="/CSI_APPLICATION/views/vente.php">Effectuer une vente</a>
+            <a href="/CSI_APPLICATION/views/stocks.php">Entrées/Sorties de produits</a>
+            <a href="/CSI_APPLICATION/views/atelier.php">Inscription aux ateliers</a>
         </nav>
         <a href="/CSI_APPLICATION/public/logout.php" class="logout-btn">Déconnexion</a>
     </div>
